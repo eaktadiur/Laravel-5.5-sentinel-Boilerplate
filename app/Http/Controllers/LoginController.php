@@ -41,9 +41,8 @@ class LoginController extends Controller
             ]);
 
         } catch (NotActivatedException $e) {
-            $delay = $e->getDelay();
             return redirect()->back()->with([
-                'error' => 'Not activated ' . $delay . ' seconds'
+                'error' => 'Not activated'
             ]);
         }
 

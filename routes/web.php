@@ -33,3 +33,5 @@ Route::group(['middleware' => 'visitors'], function () {
 Route::post('/register', 'RegistrationController@postRegister')->name('postRegister');
 Route::post('/login', 'LoginController@postLogin')->name('postLogin');
 Route::post('/logout', 'LoginController@postlogout')->name('logout');
+
+Route::resource('/blog', 'BlogController');

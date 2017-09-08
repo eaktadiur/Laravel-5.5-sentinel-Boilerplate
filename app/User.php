@@ -33,4 +33,16 @@ class User extends EloquentUser implements RoleableInterface, PermissibleInterfa
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * @param $email
+     * @return mixed
+     */
+    public static function byEmail($email){
+        return static::whereEmail($email)->first();
+    }
+
+    public function get(){
+        return;
+    }
 }
