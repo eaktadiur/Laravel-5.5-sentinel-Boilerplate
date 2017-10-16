@@ -30,7 +30,7 @@ class BlogController extends Controller
     public function create()
     {
         $blog = new Blog();
-        $blog->title = 'demo my name is hah';
+        $blog->title = 'Now the time is ' . time();
         $blog->save();
 
         return $blog;

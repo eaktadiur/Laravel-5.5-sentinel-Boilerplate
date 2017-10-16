@@ -19,15 +19,25 @@ class BlogIndexResponse implements Responsable
 
     public function toResponse($request)
     {
-//        return $this->transformBlog();
-        return view('blog.index')->with('blog', $this->transformBlog());
+//        return $this->filterBlog($this->blog);
+//        return $this->transformBlog($this->blog);
+        return view('blog.index')->with('blog', $this->filterBlog($this->blog));
+//        return view('blog.index')->with('blog', $this->transformBlog($this->blog));
 //        return view('blog.index', compact('blog'));
     }
 
-    public function transformBlog(){
-        return $this->blog->map(function ($blog) {
+    public function filterBlog($blogs)
+    {
+        return $blogs->filter(function ($blog) {
+            return $blog->id > 20;
+        });
+    }
+
+    public function transformBlog($blogs)
+    {
+        return $blogs->map(function ($blog) {
             return [
-                'name' => $blog->title,
+                'title' => $blog->title,
                 'slug' => $blog->slug
             ];
         });
