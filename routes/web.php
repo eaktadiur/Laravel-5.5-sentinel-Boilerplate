@@ -25,13 +25,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'visitors'], function () {
     Route::get('/register', 'RegistrationController@register')->name('register');
     Route::get('/login', 'LoginController@login')->name('login');
-    Route::get('/password-request', 'ForgetPaawordController@forgetPaaword')->name('password.request');
-    Route::get('/password-email', 'ForgetPaawordController@forgetPaaword')->name('password.email');
+    Route::get('/password-request', 'ForgetPasswordController@forgetPassword')->name('password.request');
+    Route::post('/password-request', 'ForgetPasswordController@postForgetPassword')->name('post.password.request');
+    Route::get('/password-email', 'ForgetPasswordController@forgetPassword')->name('password.email');
     Route::get('/activation/{email}/{code}', 'ActivationController@activate')->name('activate');
 });
 
 Route::post('/register', 'RegistrationController@postRegister')->name('postRegister');
 Route::post('/login', 'LoginController@postLogin')->name('postLogin');
-Route::post('/logout', 'LoginController@postlogout')->name('logout');
+Route::post('/logout', 'LoginController@postLogout')->name('logout');
 
 Route::resource('/blog', 'BlogController');

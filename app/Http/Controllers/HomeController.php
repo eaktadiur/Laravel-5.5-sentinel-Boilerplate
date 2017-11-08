@@ -29,7 +29,7 @@ class HomeController extends Controller
 
 //        return Sentinel::getUser();
         $message = 'rajib';
-        $user = User::get()->first();
+        $user = User::all()->first();
          event(new ChatEvent($message, $user));
         return view('home');
     }

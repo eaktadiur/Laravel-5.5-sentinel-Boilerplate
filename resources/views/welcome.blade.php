@@ -70,6 +70,7 @@
                 <div class="top-right links">
                     @if (Sentinel::check())
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('blog.index') }}">Blog</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>

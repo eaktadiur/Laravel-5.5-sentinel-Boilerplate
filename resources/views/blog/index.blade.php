@@ -4,6 +4,7 @@
 
     {{--{{dump($blog)}}--}}
     <div class="container">
+        <blog></blog>
         <table class="table">
             <thead>
             <th>S/N</th>

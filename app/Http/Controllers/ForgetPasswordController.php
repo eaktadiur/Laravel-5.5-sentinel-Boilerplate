@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ForgetPaawordController extends Controller
+class ForgetPasswordController extends Controller
 {
     public function forgetPassword()
     {

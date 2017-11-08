@@ -49,7 +49,7 @@ class LoginController extends Controller
 
     }
 
-    public function postlogout(Request $request)
+    public function postLogout(Request $request)
     {
         Sentinel::logout();
         return redirect()->route('login');
